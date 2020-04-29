@@ -1,0 +1,33 @@
+<form [formGroup] ="formulario">
+    <input type="text" formControlName="nome" class=form-control placeholder="Nome">
+    <input type="text" formControlName="email" class=form-control placeholder="E-mail">
+    <input type="text" formControlName="idade" class=form-control placeholder="Idade">
+    <input type="text" formControlName="cidade" class=form-control placeholder="Cidade">
+
+    <button class="btn btn-primary" (click)="cadastrar()">Enviar</button>
+    
+</form>
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+                <th>Funcões</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let cadastro of vetor; let indice = index">
+                <td>{{indice+1}}</td>
+                <td>{{cadastro.nome}}</td>
+                <td>{{cadastro.email}}</td>
+                <td>{{cadastro.idade}}</td>
+                <td>{{cadastro.cidade}}</td>
+                <td><button class="btn btn-danger" (click)="remover(indice)">Excluir</button></td>
+            </tr>
+        </tbody>
+</table>
+
